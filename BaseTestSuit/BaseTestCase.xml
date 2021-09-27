@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="12a622d3-9b27-4ef1-b0a6-8719e44065e3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BaseTestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="12a622d3-9b27-4ef1-b0a6-8719e44065e3fileName">BaseTestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Groovy Script" id="60f2725a-68e2-4493-b13b-45d0a7093c0e">
+    <con:settings/>
+    <con:config>
+      <script>import static com.eviware.soapui.impl.wsdl.teststeps.registry.HttpRequestStepFactory.HTTPREQUEST_TYPE
+import com.eviware.soapui.support.editor.inspectors.auth.TokenType
+import com.eviware.soapui.support.types.StringToStringMap
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+//--------------------------------------------------------Environment Selection----------------------------------------------------------------------------------------------------------------
+def Env=testRunner.testCase.testSuite.project.getPropertyValue( "Environment")
+def CT_API_Key
+def Ocp_Apim_Subscription
+
+switch (Env)
+{
+case "Dev":
+        CT_API_Key=testRunner.testCase.testSuite.project.getPropertyValue( "CT-API-Key")
+        Ocp_Apim_Subscription=testRunner.testCase.testSuite.project.getPropertyValue( "Ocp-Apim-Subscription-Key")
+  break
+case "QA":
+       log.info "found that shouldn't be found"
+  break
+default:
+       log.info "doesn't work"
+}
+
+// *************************************Get Value from Azure Devops for Client id*************************
+
+if (Env="Dev")
+{
+def method_1 = "GET"
+def EndPonit_URL_1=testRunner.testCase.testSuite.project.getPropertyValue( "Azure_URL" )
+log.info(EndPonit_URL_1)
+def headers_1 = new StringToStringMap()
+headers_1.put("CT-API-Key",CT_API_Key)
+headers_1.put("Ocp-Apim-Subscription-Key",Ocp_Apim_Subscription)
+def stepName_1 = "GetValueFromAzureDevops"
+def tc_1 = testRunner.testCase
+def tbr_1 = tc_1.getTestStepByName(stepName_1)
+if (tbr_1 != null) { 
+  tc_1.removeTestStep(tbr_1)
+}
+tc_1.addTestStep(HTTPREQUEST_TYPE , stepName_1, EndPonit_URL_1, method_1)
+testRunner.testCase.getTestStepByName(stepName_1).testRequest.setRequestHeaders(headers_1)
+testRunner.runTestStepByName(stepName_1)
+def response_azure=testRunner.testCase.getTestStepByName(stepName_1).testRequest.response.responseContent
+def json_azur = new groovy.json.JsonSlurper().parseText(response_azure)
+def result=json_azur.result
+String[] str
+String[] val
+str = result.split(' ')
+for( String values : str ){
+//log.info(values)
+     val = values.split(':')
+     def val1=val[0]
+     def val2=val[1]
+//     log.info("*****")
+//     log.info(val1)
+//     log.info(val2)
+     testRunner.testCase.testSuite.project.setPropertyValue(val1,val2)
+}
+testRunner.testCase.testSuite.project.setPropertyValue("base_URL_Dev","http://lb-ct-dev.lb.anypointdns.net")
+}
+
+//-------------------------------------------------AuthenTication Token generation-------------------------------------------------
+
+def method1 = "POST"
+def Token_URL=testRunner.testCase.testSuite.project.getPropertyValue( "base_URL_Dev" ) +testRunner.testCase.testSuite.project.getPropertyValue("Token_URL")
+def Client_ID=testRunner.testCase.testSuite.project.getPropertyValue("client_id")
+def Client_Secret=testRunner.testCase.testSuite.project.getPropertyValue("client_secret")
+def grant_type=testRunner.testCase.testSuite.project.getPropertyValue("grant_type")
+def base_URL=Token_URL
+
+def stepName1 = "Authetication_Token_Generate_New"
+def tc1=testRunner.testCase
+def tbr = tc1.getTestStepByName(stepName1)
+if (tbr != null) { 
+  tc1.removeTestStep(tbr)
+}
+tc1.addTestStep(HTTPREQUEST_TYPE , stepName1, base_URL, method1)
+context.testCase.getTestStepByName(stepName1).setPropertyValue("client_id", Client_ID)
+context.testCase.getTestStepByName(stepName1).setPropertyValue("client_secret", Client_Secret)
+context.testCase.getTestStepByName(stepName1).setPropertyValue("grant_type", grant_type)
+testRunner.runTestStepByName(stepName1)
+def response=testRunner.testCase.getTestStepByName(stepName1).testRequest.response.responseContent
+def json = new groovy.json.JsonSlurper().parseText(response)
+//log.info(json.access_token)
+testRunner.testCase.testSuite.project.setPropertyValue("token", json.access_token)
+
+
+////-------------------------------------------------Getting Value from Excel Sheet----------------------------------------------------------------------------------------------
+//
+FileInputStream fis = new FileInputStream("D:\\Users\\ANIMESH.BANIK\\Desktop\\US Story_Sprint\\ReadyAPI\\API Testcases.xlsx");
+       XSSFWorkbook workbook = new XSSFWorkbook(fis);
+       XSSFSheet sheet = workbook.getSheet("Sheet1");
+       XSSFSheet sh=workbook.getSheetAt(0);
+       int rowCount = sh.getLastRowNum();
+       XSSFRow row = sheet.getRow(0);
+       int colNum = row.getLastCellNum();
+       //log.info( rowCount)
+         int stratcol =0
+                    def TestSuit_Name
+                    def TestCase_Name
+                    def TestSuit_Name1
+                    def JSON_File
+
+for (int i=1;i&lt;rowCount   ;i++)
+                {
+               stratcol =0   
+                    def cellval=sheet.getRow(i).getCell(stratcol).getStringCellValue()
+   
+                       if(cellval != "N/A")
+			            {
+			                TestSuit_Name1=sheet.getRow(i).getCell(stratcol).getStringCellValue()                 
+			            	  TestSuit_Name=context.testCase.testSuite.project.addNewTestSuite(TestSuit_Name1) 
+			            }
+
+			 stratcol =1
+                      cellval=sheet.getRow(i).getCell(stratcol).getStringCellValue()
+                       if(cellval != "N/A")
+			            {
+			               TestCase_Name=sheet.getRow(i).getCell(stratcol).getStringCellValue()                 
+			               TestSuit_Name.addNewTestCase(TestCase_Name)
+			            }
+                stratcol =2
+                              def Step_Name =sheet.getRow(i).getCell(stratcol).getStringCellValue()
+                              def End_Point1=sheet.getRow(i).getCell(stratcol+1).getStringCellValue()
+                              def base_url_1=testRunner.testCase.testSuite.project.getPropertyValue( "base_URL_Dev" ) + End_Point1
+						def HTTP_Verb=sheet.getRow(i).getCell(stratcol + 2).getStringCellValue()
+						cellval=sheet.getRow(i).getCell(stratcol + 3).getStringCellValue()
+						if(cellval !="")
+						{
+							 JSON_File=sheet.getRow(i).getCell(stratcol + 3).getStringCellValue()
+						}
+//                                    log.info(TestSuit_Name)
+//                                    log.info(TestCase_Name)
+                                    
+						     def tc = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuit_Name1).getTestCaseByName(TestCase_Name)
+						     def tbr1 = tc.getTestStepByName(Step_Name)
+									    if (tbr1 != null) 
+									    { 
+									          tc.removeTestStep(tbr1)
+                                                 }
+					                              tc.addTestStep(HTTPREQUEST_TYPE , Step_Name, base_url_1, HTTP_Verb)                                                                                  
+					                              tc.getTestStepByName(Step_Name).testRequest.setRequestContent(JSON_File)
+					                              tc.getTestStepByName(Step_Name).testRequest.setMediaType('application/json')
+					                              def token="Bearer " + testRunner.testCase.testSuite.project.getPropertyValue("token")
+											def headers = new StringToStringMap()
+											headers.put("Authorization",token)
+											tc.getTestStepByName(Step_Name).testRequest.setRequestHeaders(headers)
+											// Check the Status code
+											def Expected_StatusCode=sheet.getRow(i).getCell(stratcol + 4).getStringCellValue()
+											def Check_Header=sheet.getRow(i).getCell(stratcol + 5).getStringCellValue()
+					
+//											def tCase = testRunner.testCase.testSuite.getTestCaseByName(TestCase_Name)
+//											def tStep = tCase.getTestStepByName(Step_Name)
+//											log.info(tCase)
+//											log.info(tStep)
+//                              tStep.run(testRunner, context)
+
+                                                       def testStep = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuit_Name1).getTestCaseByName(TestCase_Name).getTestStepByName(Step_Name)
+
+                              testStep.run(testRunner, context)
+			// Get the Response
+
+				def response2 = testStep.testRequest.response.contentAsString
+                    //log.info(response2)
+
+						stratcol =6
+						for(int j=stratcol; j&lt;11; j++)
+						{
+						  def ExpectedVal1=sheet.getRow(i).getCell(j).getStringCellValue()
+						  assert{previousResponse.contains('ExpectedVal1')
+						}
+						}
+		}
+
+
+//workbook.close</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="Data Source" id="c80c88d9-b146-48e3-a97a-6259593ec90b">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>D:/Users/ANIMESH.BANIK/Desktop/US Story_Sprint/ReadyAPI/API Testcases.xlsx</file>
+          <worksheet/>
+          <cell>A1</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>TestSuit_Name</con:property>
+      <con:property>TestCase_Name</con:property>
+      <con:property>End_Point_URL</con:property>
+      <con:property>HTTP Verb</con:property>
+      <con:property>JSON DOCUMENT(POST,PUT,PATCH)</con:property>
+      <con:property>Expected_StatusCode</con:property>
+      <con:property>Check_Header</con:property>
+      <con:property>ExpectedVal1</con:property>
+      <con:property>ExpectedVal2</con:property>
+      <con:property>ExpectedVal3</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:setupScript/>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>60f2725a-68e2-4493-b13b-45d0a7093c0e</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>c80c88d9-b146-48e3-a97a-6259593ec90b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -43,6 +43,7 @@
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="true"/>
 </xml-fragment>]]></con:setting>
+    <con:setting id="587317ef-d048-4d94-8340-65d9583c5041fileName">API_Automation_Framework2</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
@@ -97,7 +98,6 @@
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
-  <con:reporting/>
   <con:beforeRunScript>import static com.eviware.soapui.impl.wsdl.teststeps.registry.HttpRequestStepFactory.HTTPREQUEST_TYPE
 import com.eviware.soapui.support.editor.inspectors.auth.TokenType
 import com.eviware.soapui.support.types.StringToStringMap

@@ -219,12 +219,6 @@ for (int i=1;i&lt;rowCount   ;i++)
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Groovy Script 2" id="b5fba539-a8ce-4287-bca5-a40dcc8aee5c">
-    <con:settings/>
-    <con:config>
-      <script/>
-    </con:config>
-  </con:testStep>
   <con:setupScript/>
   <con:properties/>
   <con:reportParameters/>

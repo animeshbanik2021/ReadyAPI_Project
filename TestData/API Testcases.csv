@@ -1,0 +1,129 @@
+TestSuit_Name,TestCase_Name,TestStepName,End_Point_URL,HTTP Verb,"JSON DOCUMENT(POST,PUT,PATCH)",Expected_StatusCode,Check_Header,"ExpectedVal1(tagname,value)","ExpectedVal2(tagname,value)","ExpectedVal3(tagname,value)","ExpectedVal4(tagname,value)","ExpectedVal5(tagname,value)","ExpectedVal6(tagname,value)","ExpectedVal7(tagname,value)","ExpectedVal8(tagname,value)","ExpectedVal9(tagname,value)","ExpectedVal10(tagname,value)"
+US_61277_Refactor_PI2_MuleSoft_APIs_Part2_New,CT_Order_Process_API,GetFormInformation,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation1,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation2,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_61277_Refactor_PI2_MuleSoft_APIs_Part2_New,CT_Order_Process_API,GetFormInformation,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation1,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation2,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_61277_Refactor_PI2_MuleSoft_APIs_Part2_New1,CT_Order_Process_API,GetFormInformation,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,CT_Order_Process_API2,GetFormInformation1,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation2,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_61277_Refactor_PI2_MuleSoft_APIs_Part2_New,CT_Order_Process_API,GetFormInformation,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation1,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+N/A,N/A,GetFormInformation2,/ct-orders-proc-api-mule-dev/api/v1/forms,POST,"[
+    {
+        ""target_juris_code"": ""DE"",
+        ""product_code"": ""Incorporation/Formation"",
+        ""entity_type"": ""LLC""
+    }
+    
+]",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_57228_Mule_API_for_SF_Save_Product_to_Quote,CT_Order_Process_API,Create_New_Quote,/ct-orders-proc-api-mule-dev/api/v1/quotes/save-quote,POST,"{
+    ""quoteId"": """",
+    ""products"": [{
+        ""quoteLineId"": """",
+        ""productId"": ""01t04000000JJMSAA4"",
+        ""targetJurisdiction"": ""DE"",
+        ""targetCountry"": ""US"",
+
+        ""entity"": {
+            ""name"": ""1st Entity"",
+            ""type"": ""Corp"",
+            ""domesticJurisdiction"": ""CA""
+        },
+        ""options"": [{
+                ""productId"": ""01t04000000KN9zAAG""
+            },
+            {
+                ""productId"": ""01t04000000KNCdAAO""
+            },
+            {
+                ""productId"": ""01t04000000KN9xAAG""
+            }
+        ]
+    }]
+}",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_65860_Update_Task_properties_to_Complete,CT_Order_Process_API,Delete_Quote,/ct-orders-proc-api-mule-dev/api/v1/quotes/a7I040000008YBvEAM,DELETE,,200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_60723_Mule_API_for_Customer_Preferences_of_Salesforce_Quote,CT_Order_Process_API,Get_Customer_Preference_of_a_Quote,/ct-orders-proc-api-mule-dev/api/v1/quotelines/a7E04000000CsR9EAK/customer-preferences,GET,,200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,
+US_65860_Update_Task_properties_to_Complete,CT_Fulfilment_Process_API,Update_Task_Status,/ct-fulfillment-proc-api-mule-dev/api/v1/tasks,PUT,"{
+    ""caseType"": ""BuildList"",
+    ""requestType"": ""In-progress"",
+    ""sfTaskId"": ""00T0400000IfpmsEAB""
+}",200,application/json; charset=UTF-8,success:true,correlationId,target_juris_code,product_code,entity_type,forms,form_code,template_path,,

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Token" path="/ct-oauth2provider-app-mule/token" id="5d4693fb-a07f-4e25-a612-49b6f6a3f262" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5d4693fb-a07f-4e25-a612-49b6f6a3f262fileName">Token</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Token" id="f87e54cd-45f0-404d-b3e4-670eb5b5d2e4" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>client_id</con:name>
+        <con:value>b59f4a6f424747c48416dcdf4c89d777</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>b59f4a6f424747c48416dcdf4c89d777</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>client_secret</con:name>
+        <con:value>C5C2ee9648BA4013a80255894eD34Bd2</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>C5C2ee9648BA4013a80255894eD34Bd2</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>grant_type</con:name>
+        <con:value>CLIENT_CREDENTIALS</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>CLIENT_CREDENTIALS</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html</con:mediaType>
+      <con:status>504</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:request name="Authetication_Token_Generate" id="eed428fa-5b5b-48b4-be6a-89742e291a61" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://lb-ct-dev.lb.anypointdns.net/ct-oauth2provider-app-mule/token</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="grant_type" value="CLIENT_CREDENTIALS"/>
+        <con:entry key="client_secret" value="C5C2ee9648BA4013a80255894eD34Bd2"/>
+        <con:entry key="client_id" value="b59f4a6f424747c48416dcdf4c89d777"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>client_id</con:entry>
+        <con:entry>client_secret</con:entry>
+        <con:entry>grant_type</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="b2b1efe4-e233-4ee0-b4c8-aa680354fef0" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://lb-ct-dev.lb.anypointdns.net" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="b2b1efe4-e233-4ee0-b4c8-aa680354fef0fileName">http%3A%2F%2Flb-ct-dev.lb.anypointdns.net</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+  </con:endpoints>
+</con:interface>

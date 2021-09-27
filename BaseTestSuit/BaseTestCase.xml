@@ -190,6 +190,40 @@ for (int i=1;i&lt;rowCount   ;i++)
 //workbook.close</script>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="Cases - Mule AppAPI method to CREATE a BuildList case in Pega_With Valid input" id="a269d0cb-168e-4244-ba2b-bd7e436ece94">
+    <con:settings/>
+    <con:config service="http://lb-ct-dev.lb.anypointdns.net" resourcePath="/ct-fulfillment-proc-api-mule-dev/api/v1/cases" methodName="Cases" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Cases - Mule AppAPI method to CREATE a BuildList case in Pega_With Valid input" id="2f862ce5-8af7-4d6d-ac65-bb790b753700" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+        <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "Create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiib",\r
+  "sfTaskId": "00T0400000J69jWKRT",\r
+  "taskDescription": "TestDescription1@@",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "Manoj Damodar",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+        <con:originalUri>http://lb-ct-dev.lb.anypointdns.net/ct-fulfillment-proc-api-mule-dev/api/v1/cases</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:testStep type="datasource" name="Data Source" id="c80c88d9-b146-48e3-a97a-6259593ec90b">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>

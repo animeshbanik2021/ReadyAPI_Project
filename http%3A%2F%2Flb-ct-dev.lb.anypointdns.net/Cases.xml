@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Cases" path="/ct-fulfillment-proc-api-mule-dev/api/v1/cases" id="ba75e327-3a2c-46c6-ae49-bc2ebfc416ab" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ba75e327-3a2c-46c6-ae49-bc2ebfc416abfileName">Cases</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Cases" id="b087648a-eea7-4b4b-9ebe-5813de4bb41f" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html</con:mediaType>
+      <con:status>504</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_With Valid input" id="e906e958-6360-4867-8aeb-63beed55c6f3" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "Create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiib",\r
+  "sfTaskId": "00T0400000J69jWKRT",\r
+  "taskDescription": "TestDescription1@@",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "Manoj Damodar",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:originalUri>http://lb-ct-dev.lb.anypointdns.net/ct-fulfillment-proc-api-mule-dev/api/v1/cases</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 2" id="672db3db-4974-4ecc-a3cd-c276aaa93f42" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="adhoc" id="127ab273-da6a-479a-bfa1-c0345b097a19" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "BuildList",\r
+  "requestType": "create",\r
+  "accountId": "12345",\r
+  "opportunityId": "12345",\r
+  "sfTaskId": "12345-01",\r
+  "taskDescription": "Hello taskDescription",\r
+  "taskDueDate": "2021-03-01",\r
+  "taskCreatedBy": "sudha",\r
+  "requestInitiatedBy": "",\r
+  "opportunityName": "SpaceX-Quote",\r
+  "accountName": "SpaceX",\r
+  "attachmentsReferenceId": "",\r
+  "collabspaceID": "testID",\r
+  "sfTaskAssignedTo": "Stephanie"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 3" id="ff314d94-8ab6-4b4e-b86c-319f07fd3be5" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_Without Mandatory Field Value" id="a883a1d6-4bde-4cdd-9447-ff8d8e91ff1b" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "",\r
+  "requestType": "",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "",\r
+  "taskDescription": "TestDescription1",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "",\r
+  "requestInitiatedBy": "",\r
+  "opportunityName": "",\r
+  "accountName": "",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "",\r
+  "sfTaskAssignedTo": ""\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 4" id="0375f590-a52a-4e32-97cb-3034212f4554" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_Without Optionnal value Value" id="9e31e06b-bdeb-44c2-8907-82af9abde571" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEBU",\r
+  "taskDescription": "",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 5" id="c5b6a60f-8acc-4986-b14c-16e054a5fe8f" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_With_Null_Value" id="e71d01f4-5b48-40be-b7a5-1c20fa584170" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEAG",\r
+  "taskDescription": null,\r
+  "taskDueDate": null,\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": null,\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 6" id="0ba57a78-563e-4d3f-adbe-d74bc62c3070" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_With_Null_Value Copy" id="83ead96e-db08-4fdd-a7cd-9170a2863a4a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEAF",\r
+  "taskDescription": "TestDescription1",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "Manoj Damodar",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 7" id="a9acef09-78cc-43ff-a3bc-9052e2142e9f" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_Without Mandatory Key" id="46170a8c-6dc1-4833-8b7d-0491118279ec" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+    "accountId": "0010400000w9saYAA",\r
+    "opportunityId": "00604000003xoqiAA",\r
+    "taskDescription": "TestDescription1",\r
+    "taskDueDate": "2021-09-23",\r
+    "requestInitiatedBy": "Manoj Damodar",\r
+    "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 8" id="7bbb7963-745b-4349-9b1a-306094590720" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_Without Non Mandatory Key" id="5553262f-211c-41a3-b3ec-6218a6cf8dfb" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEAQ",\r
+  \r
+  \r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "Manoj Damodar",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  \r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 9" id="0715ba66-7e9c-45e3-a74d-5acfe24bbfaa" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_UnAuthorised" id="477477e0-3df0-4c67-a215-9b0675b120d2" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "create",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEBF",\r
+  "taskDescription": "TestDescription1",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy": "Animesh Banik",\r
+  "requestInitiatedBy": "Manoj Damodar",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Cases 10" id="128b844b-3e97-4e4e-be18-210d7acad489" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Mule AppAPI method to CREATE a BuildList case in Pega_WrongValue" id="6eb7107b-b57a-4a31-b640-50b3a8167e50" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://lb-ct-dev.lb.anypointdns.net</con:endpoint>
+      <con:request>{\r
+  "caseType": "Build List",\r
+  "requestType": "Invalid3",\r
+  "accountId": "0010400000w9saYAA",\r
+  "opportunityId": "00604000003xoqiAA",\r
+  "sfTaskId": "00T0400000J69jWEBF",\r
+  "taskDescription": "",\r
+  "taskDueDate": "2021-09-23",\r
+  "taskCreatedBy":"1234567890",\r
+  "requestInitiatedBy": "1234567890",\r
+  "opportunityName": "56547_Scn1_tr2-",\r
+  "accountName": "Manoj Babu - Sales",\r
+  "attachmentsReferenceId": "https://dev.azure.com/GRC-CT/CT/_wiki/wikis/CT-NPD.wiki/4816/Build-List-Task-and-Case-Management",\r
+  "collabspaceID": "testID-qa1",\r
+  "sfTaskAssignedTo": "Scn1 Trry2 lsname"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

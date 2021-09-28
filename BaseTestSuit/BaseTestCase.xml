@@ -76,8 +76,7 @@ for( String values : str ){
 	def Client_ID=testRunner.testCase.testSuite.project.getPropertyValue("client_id")
 	def Client_Secret=testRunner.testCase.testSuite.project.getPropertyValue("client_secret")
 	def grant_type=testRunner.testCase.testSuite.project.getPropertyValue("grant_type")
-	def base_URL=Token_URL
-	
+	def base_URL=Token_URL	
 	def stepName1 = "Authetication_Token_Generate_New"
 	def tc1=testRunner.testCase
 	def tbr = tc1.getTestStepByName(stepName1)
@@ -152,7 +151,7 @@ for (int i=1;i&lt;rowCount   ;i++)
 						     def tbr1 = tc.getTestStepByName(Step_Name)
 									    if (tbr1 = null) 
 									    { 
-									          tc.removeTestStep(tbr1)                                                
+									          //tc.removeTestStep(tbr1)                                                
 					                              tc.addTestStep(HTTPREQUEST_TYPE , Step_Name, base_url_1, HTTP_Verb)                                                                                  
 					                              tc.getTestStepByName(Step_Name).testRequest.setRequestContent(JSON_File)
 					                              tc.getTestStepByName(Step_Name).testRequest.setMediaType('application/json')
@@ -170,7 +169,7 @@ for (int i=1;i&lt;rowCount   ;i++)
 //                                                     tStep.run(testRunner, context)
                                                        def testStep = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuit_Name1).getTestCaseByName(TestCase_Name).getTestStepByName(Step_Name)
                                                        testStep.run(testRunner, context) 
-			              // Get the Response
+			              // Get the Response123
 
 				                                    def response2 = testStep.testRequest.response.contentAsString
                             //log.info(response2)
@@ -179,8 +178,10 @@ for (int i=1;i&lt;rowCount   ;i++)
 											for(int j=stratcol; j&lt;11; j++)
 												{
 												  def ExpectedVal1=sheet.getRow(i).getCell(j).getStringCellValue()
-												  assert{response2.contains('ExpectedVal1')}
-												  
+												  if(ExpectedVal1!=null)
+												     {
+												       assert{response2.contains('ExpectedVal1')}
+												     }
 					   			                    }
 
 				                              }
